@@ -20,47 +20,47 @@ for item in data:
 print(new_records)
 
 #connect to mysql database
-#userName = 'u122k7mhfbxvt0rp'
-#password = 'sYLq0OQvnWYw8Lv56bB6'
-#hostName = 'bp1o15l1iwoajeyerhf6-mysql.services.clever-cloud.com'
-#databaseName = 'bp1o15l1iwoajeyerhf6'
-#
-#try:
-#    #cn = connect.MySQLConnection(
-#    #    user = userName,
-#    #    password = password,
-#    #    host = hostName, 
-#    #    database = databaseName,
-#    #)
-#
-#    cn = mysql.connector.connect(
-#        user = userName,
-#        password = password,
-#        host = hostName, 
-#        database = databaseName,
-#    )
-#
-#    print(cn)
-#
-#
-#    db = cn.database
-#    insert_statement = """INSERT INTO twitter_users (userId, userName) VALUES (%s, %s)"""
-#    #new_records = 
-#
-#    if cn.is_connected():
-#        print(cn.get_server_info())
-#        cs = cn.cursor()
-#        #cs.execute()
-#        print(cs)
-#        cs.execute(operation="select database();")
-#        rows = cs.fetchall()
-#        print(rows)
-#        cs.execute(operation="select * from test;")
-#        tableData = cs.fetchall()
-#        print(tableData)
-#        cs.executemany(insert_statement, new_records)
-#        cn.commit()
-#        print(cs.rowcount)
-#
-#except Error as e:
-#    print("Error while connecting to MySQL", e)
+userName = 'u122k7mhfbxvt0rp'
+password = 'sYLq0OQvnWYw8Lv56bB6'
+hostName = 'bp1o15l1iwoajeyerhf6-mysql.services.clever-cloud.com'
+databaseName = 'bp1o15l1iwoajeyerhf6'
+
+try:
+    #cn = connect.MySQLConnection(
+    #    user = userName,
+    #    password = password,
+    #    host = hostName, 
+    #    database = databaseName,
+    #)
+
+    cn = mysql.connector.connect(
+        user = userName,
+        password = password,
+        host = hostName, 
+        database = databaseName,
+    )
+
+    print(cn)
+
+
+    db = cn.database
+    insert_statement = """INSERT INTO twitter_users (userId, userName) VALUES (%s, %s)"""
+    #new_records = 
+
+    if cn.is_connected():
+        print(cn.get_server_info())
+        cs = cn.cursor()
+        #cs.execute()
+        print(cs)
+        cs.execute(operation="select database();")
+        rows = cs.fetchall()
+        print(rows)
+        cs.execute(operation="select * from test;")
+        tableData = cs.fetchall()
+        print(tableData)
+        cs.executemany(insert_statement, new_records)
+        cn.commit()
+        print(cs.rowcount)
+
+except Error as e:
+    print("Error while connecting to MySQL", e)
