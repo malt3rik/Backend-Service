@@ -1,0 +1,2 @@
+class TwitterUser:
+    url = 'https://api.twitter.com/2/users/by?usernames=wavesprotocol,SignatureChain,neutrino_proto,sasha35625&user.fields=created_at&expansions=pinned_tweet_id&tweet.fields=author_id,created_at'
